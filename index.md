@@ -22,7 +22,7 @@ Este proyecto convierte un **ESP32-S3** en un reloj digital de alta precisión q
 | LCD (I2C) | ESP32-S3 |
 | :--- | :--- |
 | **GND** | GND |
-| **VCC** | 5V |
+| **VCC** | 3V |
 | **SDA** | GPIO 4 |
 | **SCL** | GPIO 5 |
 
