@@ -6,19 +6,14 @@ title: Inicio
 
 Este proyecto convierte un **ESP32-S3** en un reloj digital de alta precisión que se sincroniza automáticamente por Internet mediante el protocolo **NTP**. Utiliza **MicroPython** para una ejecución eficiente y una pantalla LCD 16x2 para la visualización.
 
-🚀 Características (Versión 1.1)
+## 🚀 Características (v1.1)
 
-    Sincronización NTP de Alta Precisión: Obtiene la hora exacta vía WiFi al arrancar, garantizando que el reloj nunca se desvíe.
-
-    Control Remoto BLE (Bluetooth Low Energy): Interfaz UART inalámbrica que permite controlar el LCD (encendido/apagado de luz) y consultar el estado del sistema desde cualquier smartphone.
-
-    Gestión de Coexistencia Radio: Configuración avanzada de energía (PM_NONE) que permite al WiFi y al Bluetooth trabajar simultáneamente sin interferencias.
-
-    Optimización de Memoria Proactiva: Implementación de recolección de basura (Garbage Collection) en tiempo real para asegurar estabilidad operativa 24/7.
-
-    Multitarea Fluida: Bucle principal optimizado con pausas fragmentadas que mantiene la precisión del reloj mientras atiende comandos externos de forma instantánea.
-
-    Arquitectura Segura y Modular: Separación de credenciales (WiFi/TZ) en archivos independientes y uso de librerías I2C corregidas para evitar errores de visualización.
+* **Sincronización NTP de Alta Precisión:** Obtiene la hora exacta vía WiFi al arrancar, garantizando que el reloj nunca se desvíe.
+* **Control Remoto BLE (Bluetooth Low Energy):** Interfaz inalámbrica que permite controlar el LCD (encender/apagar luz) y consultar el estado del sistema desde el móvil.
+* **Coexistencia Radio Optimizada:** Configuración avanzada (`PM_NONE`) que permite al WiFi y al Bluetooth trabajar simultáneamente sin interferencias.
+* **Gestión de Memoria Proactiva:** Implementación de `Garbage Collection` en tiempo real para asegurar estabilidad operativa 24/7.
+* **Respuesta Instantánea:** Bucle principal fragmentado para atender comandos Bluetooth sin interrumpir la fluidez del reloj.
+* **Arquitectura Segura:** Separación de credenciales (WiFi/TZ) en archivos independientes para mayor privacidad.
 
 ## 🛠️ Requisitos de Hardware
 * Placa **ESP32-S3**.
