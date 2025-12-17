@@ -1,3 +1,7 @@
+---
+layout: default
+title: Inicio
+---
 # 🕰️ Reloj NTP con ESP32-S3 y LCD I2C
 
 Este proyecto convierte un **ESP32-S3** en un reloj digital de alta precisión que se sincroniza automáticamente por Internet mediante el protocolo **NTP**. Utiliza **MicroPython** para una ejecución eficiente y una pantalla LCD 16x2 para la visualización.
