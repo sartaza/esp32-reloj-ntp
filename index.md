@@ -37,6 +37,34 @@ Este proyecto convierte un **ESP32-S3** en un reloj digital de alta precisión q
     * `config.py`
     * `main.py`
 4.  **Reiniciar:** Pulsa el botón RESET de la placa y el reloj comenzará a funcionar.
+   
+🕒 Actualización: Estabilizando el Reloj Bluetooth (v1.1)
+
+En esta etapa del proyecto, me enfrenté a un reto clásico del ESP32-S3: la inestabilidad de la conexión Bluetooth cuando el WiFi está activo. Aquí explico cómo lo solucioné.
+🛠 El Problema
+
+Al conectar el móvil mediante Serial Bluetooth Terminal, la conexión se caía a los pocos segundos. Esto ocurría por dos razones:
+
+    Conflicto de Antena: El WiFi y el Bluetooth comparten la radiofrecuencia y se "pisaban" entre sí.
+
+    Bloqueo del Procesador: El uso de time.sleep(1) dejaba al ESP32 "sordo" ante las peticiones del Bluetooth.
+
+💡 Las 4 Claves de la Solución
+
+    Prioridad de Radio: Desactivé el modo de ahorro de energía del WiFi para que la antena estuviera siempre lista.
+    Python
+
+    wlan.config(pm=network.WLAN.PM_NONE)
+
+    Flags de Comunicación: Cambié los permisos del servicio BLE para aceptar escrituras sin respuesta, lo que aligera la carga de datos.
+
+    Pausas Inteligentes: Dividí el segundo de espera en 10 partes de 100ms. Así, el reloj sigue funcionando pero el Bluetooth se revisa 10 veces más rápido.
+
+    Higiene de RAM: Introduje gc.collect() para limpiar la basura de la memoria en cada vuelta del reloj, evitando cuelgues por saturación.
+
+📺 Resultado Final
+
+Ahora el reloj sincroniza la hora por internet al arrancar y mantiene una conexión Bluetooth sólida como una roca, permitiendo encender/apagar la luz del LCD y consultar el estado desde el móvil sin desconexiones.
 
 ---
 *Proyecto desarrollado por [Sartaza](https://github.com/sartaza).*
