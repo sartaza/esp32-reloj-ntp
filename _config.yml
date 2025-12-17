@@ -1,7 +1,8 @@
 ---
-layout: default
+remote_theme: pages-themes/cayman@v0.2.0
+plugins:
+- jekyll-remote-theme
 title: "ESP32-S3 Reloj NTP + BLE"
-description: "Reloj de alta precisión sincronizado por WiFi con control remoto Bluetooth y gestión avanzada de RAM en MicroPython."
-theme: jekyll-theme-cayman
+description: "Sincronización WiFi y control Bluetooth con MicroPython"
 show_downloads: true
 ---
