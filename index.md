@@ -54,20 +54,20 @@ Al conectar el móvil mediante Serial Bluetooth Terminal, la conexión se caía 
 
 💡 Las 4 Claves de la Solución
 
-    Prioridad de Radio: Desactivé el modo de ahorro de energía del WiFi para que la antena estuviera siempre lista.
+    Prioridad de Radio: Desactivé el modo de ahorro de energía del WiFi para que la antena estuviera siempre disponible para el Bluetooth.
     Python
 
     wlan.config(pm=network.WLAN.PM_NONE)
 
-    Flags de Comunicación: Cambié los permisos del servicio BLE para aceptar escrituras sin respuesta, lo que aligera la carga de datos.
+    Flags de Comunicación: Actualicé los permisos del servicio BLE a FLAG_WRITE_NO_RESPONSE. Esto permite que el móvil envíe comandos sin esperar confirmación, eliminando latencias y desconexiones.
 
-    Pausas Inteligentes: Dividí el segundo de espera en 10 partes de 100ms. Así, el reloj sigue funcionando pero el Bluetooth se revisa 10 veces más rápido.
+    Pausas Inteligentes: Sustituí el sleep(1) por un bucle fragmentado de 10 ciclos de 100ms. Esto permite que el ESP32 revise el canal Bluetooth 10 veces por segundo sin afectar la precisión del reloj.
 
-    Higiene de RAM: Introduje gc.collect() para limpiar la basura de la memoria en cada vuelta del reloj, evitando cuelgues por saturación.
+    Higiene de RAM: Introduje gc.collect() para limpiar la memoria dinámica en cada ciclo, evitando que el stack de Bluetooth se quede sin espacio tras un uso prolongado.
 
 📺 Resultado Final
 
-Ahora el reloj sincroniza la hora por internet al arrancar y mantiene una conexión Bluetooth sólida como una roca, permitiendo encender/apagar la luz del LCD y consultar el estado desde el móvil sin desconexiones.
+Ahora el reloj sincroniza la hora por internet al arrancar y mantiene una conexión Bluetooth sólida como una roca. Esto permite encender/apagar la luz del LCD y consultar el estado desde el móvil de forma instantánea y sin desconexiones accidentales.
 
 ---
 *Proyecto desarrollado por [Sartaza](https://github.com/sartaza).*
