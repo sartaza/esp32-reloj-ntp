@@ -1,10 +1,17 @@
 ---
-layout: default
-title: Inicio
+layout: post
+title: "Reloj Inteligente ESP32-S3: Sincronización NTP y Control BLE"
+description: "Sistema de tiempo real con MicroPython, gestión de RAM y coexistencia WiFi/Bluetooth."
 ---
-# 🕰️ Reloj NTP con ESP32-S3 y LCD I2C
+🕒 ESP32-S3: Reloj Inteligente Dual (WiFi + BLE)
+Proyecto de reloj sincronizado por WiFi (NTP) con control remoto Bluetooth LE y visualización en LCD I2C.
 
-Este proyecto convierte un **ESP32-S3** en un reloj digital de alta precisión que se sincroniza automáticamente por Internet mediante el protocolo **NTP**. Utiliza **MicroPython** para una ejecución eficiente y una pantalla LCD 16x2 para la visualización.
+Este proyecto demuestra la implementación de un sistema embebido robusto capaz de gestionar conectividad inalámbrica dual, sincronización de tiempo real y una interfaz de usuario física mediante MicroPython.
+¿Qué hemos mejorado en esta versión?
+
+Para tu sitio web, puedes añadir este pequeño párrafo de "Estado del Proyecto":
+
+    Estado actual: El proyecto ha alcanzado la v1.1, resolviendo los desafíos críticos de coexistencia de radio. Gracias a una gestión optimizada de la memoria RAM y pausas de CPU fragmentadas, el dispositivo mantiene una conexión Bluetooth estable mientras el WiFi opera en segundo plano.
 
 ## 🚀 Características (v1.1)
 
