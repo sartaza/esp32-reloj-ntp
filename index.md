@@ -9,8 +9,6 @@ Proyecto de reloj sincronizado por WiFi (NTP) con control remoto Bluetooth LE y 
 Este proyecto demuestra la implementación de un sistema embebido robusto capaz de gestionar conectividad inalámbrica dual, sincronización de tiempo real y una interfaz de usuario física mediante MicroPython.
 ¿Qué hemos mejorado en esta versión?
 
-Para tu sitio web, puedes añadir este pequeño párrafo de "Estado del Proyecto":
-
     Estado actual: El proyecto ha alcanzado la v1.1, resolviendo los desafíos críticos de coexistencia de radio. Gracias a una gestión optimizada de la memoria RAM y pausas de CPU fragmentadas, el dispositivo mantiene una conexión Bluetooth estable mientras el WiFi opera en segundo plano.
 
 ## 🚀 Características (v1.1)
